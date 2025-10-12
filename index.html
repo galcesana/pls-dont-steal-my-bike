@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Please Don’t Steal My Bike</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="They’re friendly, house-trained, and very attached to me. Browse my bikes or help reunite a found bicycle with Gal." />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Please Don’t Steal My Bike" />
+  <meta property="og:description" content="This bicycle misses Gal. You can be today’s hero." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og.jpg" />
+  <meta property="og:url" content="." />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#/" aria-label="Home">
+        <span class="logo">🚲</span>
+        <span class="brand-text">Please Don’t Steal My Bike</span>
+      </a>
+      <nav aria-label="Site">
+        <a href="#/" class="nav-link">Home</a>
+        <a href="#/about" class="nav-link">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- Router outlet -->
+    <div id="app"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Made with ❤️, bells, and reflectors. Please don’t steal my bike — it cries at night.</p>
+      <p><small>© <span id="year"></span> Gal • <a href="https://github.com/" target="_blank" rel="noopener">View on GitHub</a></small></p>
+    </div>
+  </footer>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
