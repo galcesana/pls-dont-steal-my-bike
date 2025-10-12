@@ -1,49 +1,127 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
-  <title>Please Don’t Steal My Bike</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="They’re friendly, house-trained, and very attached to me. Browse my bikes or help reunite a found bicycle with Gal." />
-
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="Please Don’t Steal My Bike" />
-  <meta property="og:description" content="This bicycle misses Gal. You can be today’s hero." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/og.jpg" />
-  <meta property="og:url" content="." />
-
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-  <link rel="stylesheet" href="./styles.css" />
+  <title>Please Don’t Steal My Bike – Gal Cesana</title>
+  <meta name="description" content="If you found this bike, you’re a legend. This page proves it’s Gal’s bike and tells you how to reach him." />
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="preload" as="image" href="assets/images/owner.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#/" aria-label="Home">
-        <span class="logo">🚲</span>
-        <span class="brand-text">Please Don’t Steal My Bike</span>
-      </a>
-      <nav aria-label="Site">
-        <a href="#/" class="nav-link">Home</a>
-        <a href="#/about" class="nav-link">About</a>
+      <a class="logo" href="/" aria-label="Home">Please Don’t Steal My Bike</a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle menu">
+          <span class="nav__bar" aria-hidden="true"></span>
+          <span class="nav__bar" aria-hidden="true"></span>
+          <span class="nav__bar" aria-hidden="true"></span>
+        </button>
+        <ul id="navMenu" class="nav__menu">
+          <li><a href="#about">About the Bike</a></li>
+          <li><a href="#owner">Who’s the Owner?</a></li>
+          <li><a href="#found">Found This Bike?</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
       </nav>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">🌓</button>
     </div>
   </header>
 
-  <main id="main" class="container">
-    <!-- Router outlet -->
-    <div id="app"></div>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero section">
+      <div class="container hero__grid">
+        <div class="hero__bike card reveal">
+          <div class="bike-badge">BIKE ID <span id="bikeId">olive-racer</span></div>
+          <h1 class="hero__title">Hi. This is <span class="accent">Gal's</span> bike.</h1>
+          <div class="bike-illustration" aria-hidden="false">
+            <!-- Replace SVG with actual bike image -->
+            <img src="assets/images/my-bike.jpg" alt="Gal's olive racer bike" class="bike-img" width="600" height="400">
+          </div>
+          <p class="hero__lead">If you're reading this, either you scanned the QR on the frame (nice!) or you're planning a heist (don't!).</p>
+          <div class="hero__cta">
+            <a class="btn" href="#found">I Found This Bike</a>
+            <a class="btn btn--ghost" href="#about">Tell Me About It</a>
+          </div>
+        </div>
+
+        <div class="owner card reveal" id="owner">
+          <img class="owner__img" src="assets/images/owner.jpg" width="210" height="270" alt="Photo of Gal Cesana, the bike’s owner" />
+          <div class="owner__copy">
+            <h2>Who’s the owner?</h2>
+            <p>I’m <strong>Gal Cesana</strong> — a software engineer and a gentle defender of bicycles. This page exists so good people can help my bike and me reunite quickly.</p>
+            <div class="contact">
+              <a class="contact__item" href="tel:+972524085511">📞 +972 52‑408‑5511</a>
+              <a class="contact__item" href="mailto:galcesana8@gmail.com">✉️ galcesana8@gmail.com</a>
+              <a class="contact__item" href="https://www.linkedin.com/in/gal-cesana-844509217/" target="_blank" rel="noopener">in/gal‑cesana</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About bike -->
+    <section id="about" class="section section--alt">
+      <div class="container reveal narrow">
+        <h2>About the Bike</h2>
+        <ul class="about__highlights">
+          <li><strong>Name:</strong> Olive Racer (a.k.a. “Please don’t steal me”).</li>
+          <li><strong>Color:</strong> matte olive.</li>
+          <li><strong>Quirk:</strong> front brake sings an F# when it’s sad.</li>
+          <li><strong>Serial (masked):</strong> SN•••7231 — full number available if required by authorities.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Found flow -->
+    <section id="found" class="section">
+      <div class="container reveal narrow">
+        <h2>Found This Bike?</h2>
+        <div class="card found-card">
+          <ol class="found-steps">
+            <li>Text or call me right now — I’ll come to you: <a href="tel:+972524085511">+972 52‑408‑5511</a>.</li>
+            <li>Share your location with me or drop a pin on WhatsApp.</li>
+            <li>Optional: tap <button class="chip" id="copyProof">Copy Proof of Ownership</button> and show to a shop/guard.</li>
+          </ol>
+          <div class="proof" id="proof">
+            <p><strong>Ownership proof:</strong> I can describe hidden marks and provide full serial. Ask for the phrase “green‑olive‑7231”.</p>
+          </div>
+          <div class="gratitude">
+            <p>Returning this bike makes you part of the <em>Secret Order of Not Stealing Things</em>. Eternal good karma included.</p>
+          </div>
+        </div>
+        <details class="qrdetails">
+          <summary>Want to help future you? Add me as “Bike – Gal” with this link.</summary>
+          <code id="foundLink"></code>
+          <button class="chip" id="copyLink">Copy link</button>
+        </details>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section--alt">
+      <div class="container reveal narrow">
+        <h2>FAQ</h2>
+        <div class="card">
+          <h3>Why the attitude?</h3>
+          <p>Because humor is cheaper than a new bike.</p>
+          <h3>Can I keep it if I found it?</h3>
+          <p>Plot twist: no. But I’ll show up with serious gratitude and possibly coffee.</p>
+          <h3>Police/Shop verification</h3>
+          <p>Call me and I’ll provide full serial, hidden marks, and photos on the spot.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>Made with ❤️, bells, and reflectors. Please don’t steal my bike — it cries at night.</p>
-      <p><small>© <span id="year"></span> Gal • <a href="https://github.com/" target="_blank" rel="noopener">View on GitHub</a></small></p>
+      <p>© <span id="year"></span> Gal Cesana. Built as a static site. Deployed via GitHub Pages.</p>
     </div>
   </footer>
-
-  <script src="./script.js" defer></script>
 </body>
 </html>
