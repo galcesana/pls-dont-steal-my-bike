@@ -7,7 +7,31 @@ if (navToggle && navMenu) {
     navToggle.setAttribute('aria-expanded', String(!expanded));
     navMenu.setAttribute('aria-expanded', String(!expanded));
   });
+
+  // Close mobile menu when a nav link is clicked
+  navMenu.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+    navToggle.setAttribute('aria-expanded', 'false');
+    navMenu.setAttribute('aria-expanded', 'false');
+  });
 }
+
+// Close if you click outside the nav while it's open
+document.addEventListener('click', (e) => {
+  const open = navMenu?.getAttribute('aria-expanded') === 'true';
+  if (!open) return;
+  if (!e.target.closest('nav') && !e.target.closest('.nav__toggle')) {
+    navToggle?.setAttribute('aria-expanded', 'false');
+    navMenu?.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// Close on anchor navigation/hash change
+window.addEventListener('hashchange', () => {
+  navToggle?.setAttribute('aria-expanded', 'false');
+  navMenu?.setAttribute('aria-expanded', 'false');
+});
 
 // Theme toggle + persist
 const themeBtn = document.getElementById('themeToggle');
