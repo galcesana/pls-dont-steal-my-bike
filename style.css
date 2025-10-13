@@ -156,4 +156,58 @@ a{color:inherit;text-decoration:none}
     justify-content: center;
   }
 }
+/* ===== Desktop layout fixes (mobile unchanged) ===== */
+@media (min-width: 900px) {
+  /* 1) Hero row: left then right, both top-aligned */
+  .hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;           /* stop vertical centering */
+  }
+  /* Make sure the cards come in the correct order/column */
+  .hero__bike { grid-column: 1; align-self: start; }
+  .owner      { grid-column: 2; align-self: start; }
 
+  /* 2) Owner card: force vertical stack (title → image → body) */
+  .owner {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto;
+    gap: 1rem;
+  }
+  /* Put every direct child in the single column */
+  .owner > * { grid-column: 1 !important; }
+
+  /* Try common heading classnames; whichever exists will match */
+  .owner > h2,
+  .owner > .owner__title,
+  .owner > .owner__heading,
+  .owner > .card-title,
+  .owner > .title { order: 0; }
+
+  /* Image: full width, under the title */
+  .owner img,
+  .owner .owner__img {
+    order: 1;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Copy/text follows */
+  .owner .owner__copy,
+  .owner > p,
+  .owner > div:not(:has(img)):not(:has(h2)),
+  .owner > section,
+  .owner > article { order: 2; min-width: 0; }
+
+  /* Safety rails: prevent overflow in any hero card */
+  .hero__grid > * { min-width: 0; }
+  .card { overflow: hidden; }
+}
+
+/* Safety: cards never spill outside */
+.card { overflow: hidden; }
