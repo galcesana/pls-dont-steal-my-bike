@@ -46,18 +46,49 @@ a{color:inherit;text-decoration:none}
 
 .hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
 @media (max-width:900px){.hero__grid{grid-template-columns:1fr} .owner{display:grid;grid-template-columns:1fr; text-align:center} .owner__img{justify-self:center}}
-.hero__title{font-size:2.6rem;margin:.25rem 0}
+.hero__title {
+  font-size: 2.6rem;
+  margin: .25rem 0;
+  text-align: center;        /* center the text */
+}
 .hero__lead{font-size:1.2rem}
-.hero__cta{display:flex;gap:1rem;margin-top:1rem}
-.btn{display:inline-block;padding:.7rem 1rem;border-radius:.75rem;background:var(--primary);color:#fff;font-weight:600;border:1px solid transparent}
+.hero__cta {
+  display: flex;
+  justify-content: center;   /* centers buttons horizontally */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  display: inline-flex;                  /* allows centering */
+  align-items: center;                   /* vertical centering */
+  justify-content: center;               /* horizontal centering */
+  padding: 0.7rem 1rem;
+  border-radius: 0.75rem;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  border: 1px solid transparent;
+  text-align: center;                    /* ensures text aligns even on wrap */
+  line-height: 1.2;                      /* a bit tighter text box */
+  cursor: pointer;
+}
 .btn:hover{background:var(--primary-600)}
-.btn--ghost{background:transparent;color:var(--text);border-color:rgba(255,255,255,.16)}
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(255,255,255,.16);
+}
 .bike-badge{font:600 12px/1 var(--font);letter-spacing:.2px;background:rgba(255,255,255,.08);display:inline-block;padding:.35rem .6rem;border-radius:.6rem;border:1px solid rgba(255,255,255,.12);margin-bottom:.35rem}
 .bike-svg{width:100%;height:auto;stroke:currentColor;fill:none}
 .owner{display:grid;grid-template-columns:auto 1fr;gap:1rem}
 .owner__img{border-radius:12px;box-shadow:var(--shadow)}
 .contact{display:grid;gap:.5rem;margin-top:.25rem}
 .contact__item{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:.65rem;padding:.55rem .75rem;display:inline-flex;align-items:center;width:fit-content}
+.contact-card {
+  display: grid;
+  gap: .75rem;
+}
 .tiny{font-size:.85rem}
 .muted{color:var(--muted)}
 .found-card{display:grid;gap:.75rem}
@@ -67,7 +98,22 @@ a{color:inherit;text-decoration:none}
 .qrdetails{margin-top:1rem}
 .icon{width:22px;height:22px;fill:currentColor}
 .theme-toggle{margin-left:.5rem}
-.site-footer{padding:2.5rem 0;border-top:1px solid rgba(255,255,255,.06)}
+.site-footer {
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;                     /* centers the text */
+  background: rgba(0, 0, 0, 0.4);         /* semi-transparent background for contrast */
+  color: #fff;                            /* make text clearly visible */
+  backdrop-filter: blur(6px);             /* softens the pattern behind it */
+  border-radius: 8px 8px 0 0;             /* slightly rounded top corners */
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .bike-img {
   width: 100%;
   height: auto;
@@ -92,6 +138,13 @@ a{color:inherit;text-decoration:none}
   }
   .owner__copy {
     text-align: center;               /* reads better under the image */
+  }
+  .contact-card {
+    text-align: center;
+  }
+  .contact__item {
+    width: 100%;
+    justify-content: center;
   }
 }
 

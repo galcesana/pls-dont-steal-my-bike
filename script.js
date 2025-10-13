@@ -21,12 +21,6 @@ if (themeBtn){ themeBtn.addEventListener('click', ()=> setTheme(root.getAttribut
 // Current year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Found link helpers
-const foundLinkEl = document.getElementById('foundLink');
-const copyLinkBtn = document.getElementById('copyLink');
-const copyProofBtn = document.getElementById('copyProof');
-const proofEl = document.getElementById('proof');
-
 // Build a canonical found link that includes ?found=1
 const url = new URL(window.location.href);
 url.searchParams.set('found', '1');

@@ -22,8 +22,8 @@
         </button>
         <ul id="navMenu" class="nav__menu">
           <li><a href="#about">About the Bike</a></li>
-          <li><a href="#owner">Who’s the Owner?</a></li>
-          <li><a href="#found">Found This Bike?</a></li>
+          <li><a href="#owner">Who am I?</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
@@ -37,14 +37,14 @@
       <div class="container hero__grid">
         <div class="hero__bike card reveal">
           <div class="bike-badge">BIKE ID <span id="bikeId">olive-racer</span></div>
-          <h1 class="hero__title">Hi. This is <span class="accent">my</span> bike.</h1>
+          <h1 class="hero__title">Hi, That's <span class="accent">MY</span> bike.<br>Don't take it.</h1>
           <div class="bike-illustration" aria-hidden="false">
             <!-- Replace SVG with actual bike image -->
             <img src="assets/images/my-bike.jpg" alt="Gal's olive racer bike" class="bike-img" width="600" height="400">
           </div>
-          <p class="hero__lead">If you're reading this, either you're just a curious individual or you're planning a heist (pls don't).</p>
+          <p class="hero__lead">If you're reading this, either you're just a curious individual or you're planning a heist (don't).</p>
           <div class="hero__cta">
-            <a class="btn" href="#found">I Found This Bike</a>
+            <a class="btn" href="#contact">I Found This Bike</a>
             <a class="btn btn--ghost" href="#about">Tell Me About It</a>
           </div>
         </div>
@@ -53,16 +53,11 @@
           <img class="owner__img" src="assets/images/owner.jpg" width="210" height="270" alt="Photo of Gal Cesana, the bike’s owner" />
           <div class="owner__copy">
             <h2>So why you should NOT mess with me</h2>
-            <p> First, I used to take Judo classes in second grade and I'm not afraid to apply my skills if needed.<br>
-                Secondly, I have a big scary dog named Sky (See image below).<br>
-                If all that didn't convince you, You should know that stealing is not nice and I worked hard to afford this bike so pls don't steal it.<br>
-                NOTE - this bike's location is tracked by an air tag so I know where you are!</p>
+            <p> First, I took judo classes in second grade, and I'm not afraid to use my skills if needed.<br>
+                Secondly, I have a big, scary dog named Sky (see image below).
+                <br>If all that didn't convince you, you should know that stealing is not nice and I worked hard to afford this bike so pls don't steal it.<br>
+                <br><strong>IMPORTANT NOTE</strong> - this bike's location is tracked by an AirTag, so I know where it is!</p>
             <img src="assets/images/sky.jpg" alt="Sky" class="owner__img" width="250" height="250">
-            <div class="contact">
-              <a class="contact__item" href="tel:+972524085511">📞 +972 52‑408‑5511</a>
-              <a class="contact__item" href="mailto:galcesana8@gmail.com">✉️ galcesana8@gmail.com</a>
-              <a class="contact__item" href="https://www.linkedin.com/in/gal-cesana-844509217/" target="_blank" rel="noopener">in/gal‑cesana</a>
-            </div>
           </div>
         </div>
       </div>
@@ -81,28 +76,24 @@
       </div>
     </section>
 
-    <!-- Found flow -->
-    <section id="found" class="section">
+    <!-- Contact -->
+    <section id="contact" class="section">
       <div class="container reveal narrow">
-        <h2>Found This Bike?</h2>
-        <div class="card found-card">
-          <ol class="found-steps">
-            <li>Text or call me right now — I’ll come to you: <a href="tel:+972524085511">+972 52‑408‑5511</a>.</li>
-            <li>Share your location with me or drop a pin on WhatsApp.</li>
-            <li>Optional: tap <button class="chip" id="copyProof">Copy Proof of Ownership</button> and show to a shop/guard.</li>
-          </ol>
-          <div class="proof" id="proof">
-            <p><strong>Ownership proof:</strong> I can describe hidden marks and provide full serial. Ask for the phrase “green‑olive‑7231”.</p>
-          </div>
-          <div class="gratitude">
-            <p>Returning this bike makes you part of the <em>Secret Order of Not Stealing Things</em>. Eternal good karma included.</p>
-          </div>
+        <h2>Contact Me</h2>
+
+        <div class="card contact-card">
+          <a class="contact__item" href="tel:+972524085511" aria-label="Call Gal">
+            📞&nbsp;&nbsp;+972 52-408-5511
+          </a>
+
+          <a class="contact__item" href="mailto:galcesana8@gmail.com" aria-label="Email Gal">
+            ✉️&nbsp;&nbsp;galcesana8@gmail.com
+          </a>
+
+          <a class="contact__item" href="https://www.linkedin.com/in/gal-cesana-844509217/" target="_blank" rel="noopener" aria-label="Gal on LinkedIn">
+            in/gal-cesana
+          </a>
         </div>
-        <details class="qrdetails">
-          <summary>Want to help future you? Add me as “Bike – Gal” with this link.</summary>
-          <code id="foundLink"></code>
-          <button class="chip" id="copyLink">Copy link</button>
-        </details>
       </div>
     </section>
 
