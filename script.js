@@ -18,18 +18,9 @@ function setTheme(mode){ root.setAttribute('data-theme', mode); localStorage.set
 setTheme(storedTheme || (systemDark ? 'dark' : 'light'));
 if (themeBtn){ themeBtn.addEventListener('click', ()=> setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark')); }
 
-// Current year
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Build a canonical found link that includes ?found=1
-const url = new URL(window.location.href);
-url.searchParams.set('found', '1');
-foundLinkEl.textContent = url.toString();
-
-copyLinkBtn?.addEventListener('click', async ()=>{
-  try { await navigator.clipboard.writeText(foundLinkEl.textContent); copyLinkBtn.textContent = 'Copied ✓'; }
-  catch { copyLinkBtn.textContent = 'Copy failed'; }
-});
+// Current year - with null check
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 copyProofBtn?.addEventListener('click', async ()=>{
   try { await navigator.clipboard.writeText('Ownership proof: phrase "green-olive-7231", masked serial SN•••7231, hidden mark under seatpost.'); copyProofBtn.textContent = 'Copied ✓'; }
